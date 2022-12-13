@@ -93,14 +93,17 @@ function valkerie.window(title, V)
 
 	--Properties:
 
-	ValkyrieHub.Name = "ValkyrieHub"
-	ValkyrieHub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ValkyrieHub.Name = game:GetService("HttpService"):GenerateGUID(false)
+	syn.protect_gui(ValkyrieHub)
+	ValkyrieHub.Parent = game.CoreGui
 
 	Loader.Name = "Loader"
 	Loader.Parent = ValkyrieHub
 	Loader.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 	Loader.Position = UDim2.new(0.176069424, 0, 0.101265818, 0)
 	Loader.Size = UDim2.new(0, 400, 0, 426)
+	Loader.Active = true
+	Loader.Draggable = true
 
 	UICorner.Parent = Loader
 
@@ -321,7 +324,7 @@ function valkerie.window(title, V)
 					
 					for i, v in pairs(buttons) do
 						local DropdownButton_2 = Instance.new("TextButton")
-						DropdownButton_2.Name = "DropdownButton"
+						DropdownButton_2.Name = v
 						DropdownButton_2.Parent = Container_2
 						DropdownButton_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 						DropdownButton_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
