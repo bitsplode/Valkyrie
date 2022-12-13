@@ -102,8 +102,9 @@ function valkerie.new(title, V)
 			local TextButton = Instance.new("Frame")
 			local UICorner_11 = Instance.new("UICorner")
 			local TextLabel_4 = Instance.new("TextLabel")
+			
 			Tab.Name = "Tab"
-			Tab.Parent = ValkyrieHub
+			Tab.Parent = Container
 			Tab.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 			Tab.Position = UDim2.new(0, 0, 0.0204819161, 0)
 			Tab.Size = UDim2.new(0, 379, 0, 51)
@@ -177,7 +178,7 @@ function valkerie.new(title, V)
 					local UIListLayout = Instance.new("UIListLayout")
 					
 					DropdownFrame.Name = "DropdownFrame"
-					DropdownFrame.Parent = Container
+					DropdownFrame.Parent = Tab
 					DropdownFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 					DropdownFrame.Position = UDim2.new(0.0369393118, 0, 0.460000008, 0)
 					DropdownFrame.Size = UDim2.new(0, 350, 0, 40)
@@ -235,7 +236,7 @@ function valkerie.new(title, V)
 					local TextLabel_5 = Instance.new("TextLabel")
 					
 					ToggleButton.Name = "ToggleButton"
-					ToggleButton.Parent = Container
+					ToggleButton.Parent = Tab
 					ToggleButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 					ToggleButton.Position = UDim2.new(0.0369393118, 0, 0.460000008, 0)
 					ToggleButton.Size = UDim2.new(0, 350, 0, 40)
