@@ -16,8 +16,9 @@ function valkerie.load(duration)
 
 	--Properties:
 
-	ValkyrieLoader.Name = "ValkyrieLoader"
-	ValkyrieLoader.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ValkyrieLoader.Name = game:GetService("HttpService"):GenerateGUID(false)
+	syn.protect_gui(ValkyrieLoader)
+	ValkyrieLoader.Parent = game.CoreGui
 
 	Loader.Name = "Loader"
 	Loader.Parent = ValkyrieLoader
@@ -174,6 +175,21 @@ function valkerie.window(title, V)
 	UIListLayout_3.Parent = Container
 	UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	UIListLayout_3.Padding = UDim.new(0, 10)
+	
+	local count = 0;
+	game:GetService("UserInputService").InputBegan:Connect(function(key, gpe)
+		if key.KeyCode == Enum.KeyCode.RightShift and count >= 2 then
+			count = 0;
+			Loader.Visible = not Loader.Visible
+		else
+			count += 1
+			spawn(function()
+				wait(.5)
+				count = 0
+				return
+			end)
+		end
+	end)
 	
 	return {
 		new = function(name)
