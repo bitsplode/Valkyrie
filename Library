@@ -13,6 +13,7 @@ function valkerie.window(title, V)
 	local TextLabel_2 = Instance.new("TextLabel")
 	local Container = Instance.new("ScrollingFrame")
 	local DropdownButton_2 = Instance.new("TextButton")
+	local UIListLayout_3 = Instance.new("UIListLayout")
 
 	--Properties:
 
@@ -90,6 +91,12 @@ function valkerie.window(title, V)
 	Container.Position = UDim2.new(0.012820513, 0, 0.0819277093, 0)
 	Container.Size = UDim2.new(0, 379, 0, 350)
 	Container.ScrollBarThickness = 6
+	Container.AutomaticSize = Enum.AutomaticSize.Y
+	
+	UIListLayout_3.Parent = Container
+	UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	UIListLayout_3.Padding = UDim.new(0, 10)
+	
 	return {
 		new = function(name)
 			local Tab = Instance.new("Frame")
@@ -99,10 +106,7 @@ function valkerie.window(title, V)
 			local UIListLayout_2 = Instance.new("UIListLayout")
 			local ZFooter = Instance.new("TextLabel")
 			local Frame_2 = Instance.new("Frame")
-			local TextButton = Instance.new("Frame")
-			local UICorner_11 = Instance.new("UICorner")
-			local TextLabel_4 = Instance.new("TextLabel")
-
+			
 			Tab.Name = "Tab"
 			Tab.Parent = Container
 			Tab.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -148,26 +152,33 @@ function valkerie.window(title, V)
 			Frame_2.Position = UDim2.new(0.0132275131, 0, -0.100000024, 0)
 			Frame_2.Size = UDim2.new(0, 369, 0, 2)
 
-			TextButton.Name = "TextButton"
-			TextButton.Parent = ValkyrieHub
-			TextButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-			TextButton.Position = UDim2.new(0.0369393118, 0, 0.460000008, 0)
-			TextButton.Size = UDim2.new(0, 350, 0, 40)
-
-			UICorner_11.Parent = TextButton
-
-			TextLabel_4.Parent = TextButton
-			TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			TextLabel_4.BackgroundTransparency = 1.000
-			TextLabel_4.Position = UDim2.new(0.0228571426, 0, 0.10999985, 0)
-			TextLabel_4.Size = UDim2.new(0, 342, 0, 29)
-			TextLabel_4.Font = Enum.Font.Cartoon
-			TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-			TextLabel_4.TextScaled = true
-			TextLabel_4.TextSize = 14.000
-			TextLabel_4.TextWrapped = true
-			TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
 			return {
+				button = function(name, callback)
+					local TextButton = Instance.new("Frame")
+					local UICorner_11 = Instance.new("UICorner")
+					local TextLabel_4 = Instance.new("TextButton")
+
+					TextButton.Name = "TextButton"
+					TextButton.Parent = ValkyrieHub
+					TextButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+					TextButton.Position = UDim2.new(0.0369393118, 0, 0.460000008, 0)
+					TextButton.Size = UDim2.new(0, 350, 0, 40)
+
+					UICorner_11.Parent = TextButton
+
+					TextLabel_4.Parent = TextButton
+					TextLabel_4.Text = name or "Error 101"
+					TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+					TextLabel_4.BackgroundTransparency = 1.000
+					TextLabel_4.Position = UDim2.new(0.0228571426, 0, 0.10999985, 0)
+					TextLabel_4.Size = UDim2.new(0, 342, 0, 29)
+					TextLabel_4.Font = Enum.Font.Cartoon
+					TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+					TextLabel_4.TextScaled = true
+					TextLabel_4.TextSize = 14.000
+					TextLabel_4.TextWrapped = true
+					TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+				end,
 				dropdown = function(name, buttons, callback)
 					local DropdownFrame = Instance.new("Frame")
 					local UICorner_9 = Instance.new("UICorner")
@@ -191,7 +202,7 @@ function valkerie.window(title, V)
 					TextLabel_3.Position = UDim2.new(0.0457142852, 0, 0.0599998459, 0)
 					TextLabel_3.Size = UDim2.new(0, 334, 0, 13)
 					TextLabel_3.Font = Enum.Font.Cartoon
-					TextLabel_3.Text = name
+					TextLabel_3.Text = name or "Error 102"
 					TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 					TextLabel_3.TextScaled = true
 					TextLabel_3.TextSize = 14.000
@@ -258,7 +269,8 @@ function valkerie.window(title, V)
 
 					UICorner_13.Parent = Button_3
 
-			--[[		TextLabel_5.Parent = ToggleButton
+					TextLabel_5.Parent = ToggleButton
+					TextLabel_5.Text = name or "Error 103"
 					TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 					TextLabel_5.BackgroundTransparency = 1.000
 					TextLabel_5.Position = UDim2.new(0.122857146, 0, 0.10999985, 0)
@@ -268,7 +280,7 @@ function valkerie.window(title, V)
 					TextLabel_5.TextScaled = true
 					TextLabel_5.TextSize = 14.000
 					TextLabel_5.TextWrapped = true
-					TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left]]
+					TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
 				end,
 			}
 		end,
