@@ -1,6 +1,83 @@
+local TweenService = game:GetService("TweenService")
+local player = game.Players.LocalPlayer
 local ValkyrieHub = Instance.new("ScreenGui")
 local Fade = Instance.new("Frame")
 local valkerie = {}
+
+function valkerie.load(duration)
+	local ValkyrieLoader = Instance.new("ScreenGui")
+	local Loader = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local Background = Instance.new("ImageLabel")
+	local UICorner_2 = Instance.new("UICorner")
+	local Title = Instance.new("TextLabel")
+	local Note = Instance.new("TextLabel")
+	local ImageLabel = Instance.new("ImageLabel")
+
+	--Properties:
+
+	ValkyrieLoader.Name = "ValkyrieLoader"
+	ValkyrieLoader.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+	Loader.Name = "Loader"
+	Loader.Parent = ValkyrieLoader
+	Loader.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+	Loader.Position = UDim2.new(0.391196519, 0, 0.341772139, 0)
+	Loader.Size = UDim2.new(0, 350, 0, 175)
+
+	UICorner.Parent = Loader
+
+	Background.Name = "Background"
+	Background.Parent = Loader
+	Background.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	Background.Position = UDim2.new(0.0142857144, 0, 0.0285714287, 0)
+	Background.Size = UDim2.new(0, 340, 0, 165)
+	Background.Image = "rbxassetid://2957790421"
+
+	UICorner_2.Parent = Background
+
+	Title.Name = "Title"
+	Title.Parent = Background
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.Position = UDim2.new(0, 0, 0.0909090936, 0)
+	Title.Size = UDim2.new(0, 340, 0, 24)
+	Title.Font = Enum.Font.SourceSansBold
+	Title.Text = "VALKYRIE LOADER"
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextScaled = true
+	Title.TextSize = 14.000
+	Title.TextWrapped = true
+
+	Note.Name = "Note"
+	Note.Parent = Background
+	Note.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Note.BackgroundTransparency = 1.000
+	Note.Position = UDim2.new(0, 0, 0.75151515, 0)
+	Note.Size = UDim2.new(0, 340, 0, 24)
+	Note.Font = Enum.Font.SourceSansBold
+	Note.Text = "Launching script"
+	Note.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Note.TextScaled = true
+	Note.TextSize = 14.000
+	Note.TextWrapped = true
+
+	ImageLabel.Parent = Background
+	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel.BackgroundTransparency = 1.000
+	ImageLabel.Position = UDim2.new(0.426470578, 0, 0.345454574, 0)
+	ImageLabel.Size = UDim2.new(0, 50, 0, 50)
+	ImageLabel.Image = "rbxassetid://6021874488"
+	
+	local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
+	local tween = TweenService:Create(ImageLabel, tweenInfo, {Rotation = -360})
+	tween:Play()
+	
+	wait(duration)
+	
+	ValkyrieLoader:Destroy()
+	return true
+end
 
 function valkerie.window(title, V)
 	local Loader = Instance.new("Frame")
@@ -159,7 +236,7 @@ function valkerie.window(title, V)
 					local TextLabel_4 = Instance.new("TextButton")
 
 					TextButton.Name = "TextButton"
-					TextButton.Parent = ValkyrieHub
+					TextButton.Parent = Container
 					TextButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 					TextButton.Position = UDim2.new(0.0369393118, 0, 0.460000008, 0)
 					TextButton.Size = UDim2.new(0, 350, 0, 40)
