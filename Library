@@ -102,7 +102,7 @@ function valkerie.new(title, V)
 			local TextButton = Instance.new("Frame")
 			local UICorner_11 = Instance.new("UICorner")
 			local TextLabel_4 = Instance.new("TextLabel")
-			
+
 			Tab.Name = "Tab"
 			Tab.Parent = Container
 			Tab.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -176,7 +176,7 @@ function valkerie.new(title, V)
 					local ImageLabel = Instance.new("ImageLabel")
 					local Container_2 = Instance.new("ScrollingFrame")
 					local UIListLayout = Instance.new("UIListLayout")
-					
+
 					DropdownFrame.Name = "DropdownFrame"
 					DropdownFrame.Parent = Tab
 					DropdownFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
@@ -191,6 +191,7 @@ function valkerie.new(title, V)
 					TextLabel_3.Position = UDim2.new(0.0457142852, 0, 0.0599998459, 0)
 					TextLabel_3.Size = UDim2.new(0, 334, 0, 13)
 					TextLabel_3.Font = Enum.Font.Cartoon
+					TextLabel_3.Text = name
 					TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 					TextLabel_3.TextScaled = true
 					TextLabel_3.TextSize = 14.000
@@ -234,7 +235,7 @@ function valkerie.new(title, V)
 					local Button_3 = Instance.new("TextButton")
 					local UICorner_13 = Instance.new("UICorner")
 					local TextLabel_5 = Instance.new("TextLabel")
-					
+
 					ToggleButton.Name = "ToggleButton"
 					ToggleButton.Parent = Tab
 					ToggleButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
@@ -291,7 +292,7 @@ function valkerie.confirmation(desc)
 	local Background_4 = Instance.new("ImageLabel")
 	local UICorner_8 = Instance.new("UICorner")
 	local Button_2 = Instance.new("TextButton")
-	
+
 	USure.Name = "USure"
 	USure.Parent = ValkyrieHub
 	USure.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -411,9 +412,9 @@ function valkerie.confirmation(desc)
 	Fade.BackgroundTransparency = 0.200
 	Fade.Size = UDim2.new(1, 0, 1, 0)
 	Fade.Visible = false
-	
+
 	-- In the dropdown container
-	
+
 --[[	DropdownButton_2.Name = "DropdownButton"
 	DropdownButton_2.Parent = ValkyrieHub
 	DropdownButton_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
@@ -424,7 +425,7 @@ function valkerie.confirmation(desc)
 	DropdownButton_2.Text = "Dropdown"
 	DropdownButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 	DropdownButton_2.TextSize = 14.000]]
-	
+
 end
 
 return valkerie
