@@ -168,7 +168,6 @@ function valkerie.window(title, V)
 	Container.Position = UDim2.new(0.012820513, 0, 0.0819277093, 0)
 	Container.Size = UDim2.new(0, 379, 0, 350)
 	Container.ScrollBarThickness = 6
-	Container.AutomaticSize = Enum.AutomaticSize.Y
 	
 	UIListLayout_3.Parent = Container
 	UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -189,10 +188,12 @@ function valkerie.window(title, V)
 			Tab.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 			Tab.Position = UDim2.new(0, 0, 0.0204819161, 0)
 			Tab.Size = UDim2.new(0, 379, 0, 51)
+			Tab.AutomaticSize = Enum.AutomaticSize.Y
 
 			UICorner_10.Parent = Tab
 
 			ATitle.Name = "ATitle"
+			ATitle.Text = name or "Error 104"
 			ATitle.Parent = Tab
 			ATitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			ATitle.BackgroundTransparency = 1.000
