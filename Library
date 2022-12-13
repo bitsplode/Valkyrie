@@ -350,6 +350,7 @@ function valkerie.window(title, V)
 						DropdownButton_2.Text = "Dropdown"
 						DropdownButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 						DropdownButton_2.TextSize = 14.000
+						DropdownButton_2.ZIndex = 2
 						DropdownButton_2.MouseButton1Click:Connect(function()
 							callback(v)
 						end)
@@ -557,7 +558,7 @@ function valkerie.confirmation(desc)
 
 end
 
-function valkerie.espapi() 
+function valkerie.espapi()
 	_G.ESPBlimps = {}
 	local ESPAPI = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
