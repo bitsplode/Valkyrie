@@ -2,7 +2,7 @@ local ValkyrieHub = Instance.new("ScreenGui")
 local Fade = Instance.new("Frame")
 local valkerie = {}
 
-function valkerie.new(title, V)
+function valkerie.window(title, V)
 	local Loader = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
 	local Background = Instance.new("ImageLabel")
@@ -258,7 +258,7 @@ function valkerie.new(title, V)
 
 					UICorner_13.Parent = Button_3
 
-					TextLabel_5.Parent = ToggleButton
+			--[[		TextLabel_5.Parent = ToggleButton
 					TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 					TextLabel_5.BackgroundTransparency = 1.000
 					TextLabel_5.Position = UDim2.new(0.122857146, 0, 0.10999985, 0)
@@ -268,7 +268,7 @@ function valkerie.new(title, V)
 					TextLabel_5.TextScaled = true
 					TextLabel_5.TextSize = 14.000
 					TextLabel_5.TextWrapped = true
-					TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+					TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left]]
 				end,
 			}
 		end,
