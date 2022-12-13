@@ -317,6 +317,7 @@ function valkerie.window(title, V)
 					Container_2.Size = UDim2.new(0, 318, 0, 90)
 					Container_2.Visible = false
 					Container_2.ScrollBarThickness = 6
+					Container_2.ZIndex = 2
 					
 					for i, v in pairs(buttons) do
 						local DropdownButton_2 = Instance.new("TextButton")
