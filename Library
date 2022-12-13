@@ -89,7 +89,6 @@ function valkerie.window(title, V)
 	local Note = Instance.new("TextLabel")
 	local TextLabel_2 = Instance.new("TextLabel")
 	local Container = Instance.new("ScrollingFrame")
-	local DropdownButton_2 = Instance.new("TextButton")
 	local UIListLayout_3 = Instance.new("UIListLayout")
 
 	--Properties:
@@ -237,7 +236,7 @@ function valkerie.window(title, V)
 					local TextLabel_4 = Instance.new("TextButton")
 
 					TextButton.Name = "TextButton"
-					TextButton.Parent = Container
+					TextButton.Parent = Tab
 					TextButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 					TextButton.Position = UDim2.new(0.0369393118, 0, 0.460000008, 0)
 					TextButton.Size = UDim2.new(0, 350, 0, 40)
@@ -256,6 +255,7 @@ function valkerie.window(title, V)
 					TextLabel_4.TextSize = 14.000
 					TextLabel_4.TextWrapped = true
 					TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+					TextLabel_4.MouseButton1Click:Connect(callback)
 				end,
 				dropdown = function(name, buttons, callback)
 					local DropdownFrame = Instance.new("Frame")
@@ -297,6 +297,9 @@ function valkerie.window(title, V)
 					DropdownButton.Text = "Dropdown"
 					DropdownButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 					DropdownButton.TextSize = 14.000
+					DropdownButton.MouseButton1Click:Connect(function()
+						Container_2.Visible = not Container_2.Visible
+					end)
 
 					ImageLabel.Parent = DropdownButton
 					ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -314,6 +317,23 @@ function valkerie.window(title, V)
 					Container_2.Size = UDim2.new(0, 318, 0, 90)
 					Container_2.Visible = false
 					Container_2.ScrollBarThickness = 6
+					
+					for i, v in pairs(buttons) do
+						local DropdownButton_2 = Instance.new("TextButton")
+						DropdownButton_2.Name = "DropdownButton"
+						DropdownButton_2.Parent = Container_2
+						DropdownButton_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+						DropdownButton_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+						DropdownButton_2.Position = UDim2.new(0.0457142852, 0, 0.474999994, 0)
+						DropdownButton_2.Size = UDim2.new(0, 318, 0, 15)
+						DropdownButton_2.Font = Enum.Font.Cartoon
+						DropdownButton_2.Text = "Dropdown"
+						DropdownButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+						DropdownButton_2.TextSize = 14.000
+						DropdownButton_2.MouseButton1Click:Connect(function()
+							callback(v)
+						end)
+					end
 
 					UIListLayout.Parent = Container_2
 					UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -344,6 +364,14 @@ function valkerie.window(title, V)
 					Button_3.TextScaled = true
 					Button_3.TextSize = 14.000
 					Button_3.TextWrapped = true
+					Button_3.MouseButton1Click:Connect(function()
+						if Button_3.Text == "X" then
+							Button_3.Text = ""
+						else
+							Button_3.Text = "X"
+							callback()
+						end
+					end)
 
 					UICorner_13.Parent = Button_3
 
@@ -505,16 +533,7 @@ function valkerie.confirmation(desc)
 
 	-- In the dropdown container
 
---[[	DropdownButton_2.Name = "DropdownButton"
-	DropdownButton_2.Parent = ValkyrieHub
-	DropdownButton_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	DropdownButton_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
-	DropdownButton_2.Position = UDim2.new(0.0457142852, 0, 0.474999994, 0)
-	DropdownButton_2.Size = UDim2.new(0, 318, 0, 15)
-	DropdownButton_2.Font = Enum.Font.Cartoon
-	DropdownButton_2.Text = "Dropdown"
-	DropdownButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-	DropdownButton_2.TextSize = 14.000]]
+--[[	]]
 
 end
 
