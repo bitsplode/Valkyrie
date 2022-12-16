@@ -23,7 +23,7 @@ function valkerie.load(duration)
 	Loader.Name = "Loader"
 	Loader.Parent = ValkyrieLoader
 	Loader.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-	Loader.Position = UDim2.new(0.391196519, 0, 0.341772139, 0)
+	Loader.Position = UDim2.new(0.391, 0,0.342, 0)
 	Loader.Size = UDim2.new(0, 350, 0, 175)
 
 	UICorner.Parent = Loader
@@ -78,6 +78,65 @@ function valkerie.load(duration)
 	
 	ValkyrieLoader:Destroy()
 	return true
+end
+
+function valkerie.nosupport()
+	local NotSupported = Instance.new("Frame")
+	local Image = Instance.new("ImageLabel")
+	local Title = Instance.new("TextLabel")
+	local InstanceClose = Instance.new("TextLabel")
+	local Image_2 = Instance.new("ImageLabel")
+
+	--Properties:
+
+	NotSupported.Name = "NotSupported"
+	NotSupported.Parent = ValkyrieHub.Loader:FindFirstChild("Background")
+	NotSupported.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	NotSupported.BackgroundTransparency = 1.000
+	NotSupported.Position = UDim2.new(0.012820513, 0, 0.0819277093, 0)
+	NotSupported.Size = UDim2.new(0, 379, 0, 350)
+
+	Image.Name = "Image"
+	Image.Parent = NotSupported
+	Image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Image.BackgroundTransparency = 1.000
+	Image.Position = UDim2.new(0.432717681, 0, 0.428571433, 0)
+	Image.Size = UDim2.new(0, 50, 0, 50)
+	Image.Image = "rbxassetid://7072722603"
+
+	Title.Name = "Title"
+	Title.Parent = NotSupported
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.Position = UDim2.new(0.0527704507, 0, 0.0514285713, 0)
+	Title.Size = UDim2.new(0, 337, 0, 50)
+	Title.Font = Enum.Font.Unknown
+	Title.Text = "WE DO NOT HAVE SUPPORT FOR THIS GAME"
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextSize = 17.000
+	Title.TextWrapped = true
+
+	InstanceClose.Name = "InstanceClose"
+	InstanceClose.Parent = NotSupported
+	InstanceClose.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	InstanceClose.BackgroundTransparency = 1.000
+	InstanceClose.Position = UDim2.new(0.0527704507, 0, 0.780000031, 0)
+	InstanceClose.Size = UDim2.new(0, 337, 0, 50)
+	InstanceClose.Font = Enum.Font.Unknown
+	InstanceClose.Text = "THIS INSTANCE WILL CLOSE IN 10 SECONDS."
+	InstanceClose.TextColor3 = Color3.fromRGB(255, 255, 255)
+	InstanceClose.TextSize = 17.000
+	InstanceClose.TextWrapped = true
+
+	Image_2.Name = "Image"
+	Image_2.Parent = NotSupported
+	Image_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Image_2.BackgroundTransparency = 1.000
+	Image_2.Position = UDim2.new(0.4353562, 0, 0.428571433, 0)
+	Image_2.Size = UDim2.new(0, 50, 0, 50)
+	Image_2.Image = "rbxassetid://7072725342"
+	
+	ValkyrieHub.Loader:FindFirstChild("Container").Visible = false
 end
 
 function valkerie.window(title, V)
@@ -147,7 +206,7 @@ function valkerie.window(title, V)
 	Note.Position = UDim2.new(0.012820513, 0, 0.941511512, 0)
 	Note.Size = UDim2.new(0, 380, 0, 24)
 	Note.Font = Enum.Font.SourceSansBold
-	Note.Text = "V1:Beta.DevBuild"
+	Note.Text = V or "V1:Beta.DevBuild"
 	Note.TextColor3 = Color3.fromRGB(205, 205, 205)
 	Note.TextSize = 14.000
 	Note.TextWrapped = true
